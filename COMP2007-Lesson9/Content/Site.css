@@ -16,6 +16,14 @@ textarea {
     max-width: 280px;
 }
 
+.navbar-brand {
+    padding-top:5px;
+}
+
+#brand {
+    display:inline-block;
+}
+
 /* styles for validation helpers */
 .field-validation-error {
     color: #b94a48;
