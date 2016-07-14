@@ -11,23 +11,28 @@ namespace COMP2007_Lesson9.Controllers
     {
         //
         // GET: /Store/
-        public string Index()
+        public ActionResult Index()
         {
-            return "Hello from Store.Index()";
+            List<Genre> genres = new List<Genre>
+            {
+                new Genre("Disco"),
+                new Genre("Jazz"),
+                new Genre("Rock")
+            };
+            return View(genres);
         }
         //
         // GET: /Store/Browse?genre=Disco
-        public string Browse(string genre)
+        public ActionResult Browse(string genre)
         {
-            string message = HttpUtility.HtmlEncode("Store.Browse, Genre = " + genre);
-
-            return message;
+            Genre genreModel = new Genre(genre);
+            return View(genreModel);
         }
         //
         // GET: /Store/Details/5
         public ActionResult Details(int id = 0)
         {
-            var album = new Album("Album " + id);
+            Album album = new Album("Album " + id);
             return View(album);
         }
 	}
